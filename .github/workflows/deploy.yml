@@ -11,7 +11,6 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      # - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - name: Run script file
         run: sh ~/fakepng-dev/deploy.sh
-        shell: bash
