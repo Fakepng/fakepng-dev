@@ -13,4 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run script file
-        run: sh ~/fakepng-dev/deploy.sh
+        run: |
+          chmod +x ~/fakepng-dev/deploy.sh
+          ~/fakepng-dev/deploy.sh
+        shell: bash
