@@ -3,7 +3,7 @@ echo "Kill all the running PM2 actions"
 sudo pm2 kill
 
 echo "Jump to app folder"
-cd /home/ubuntu/fakepng-dev
+cd ~/fakepng-dev
 
 echo "Update app from Git"
 git pull
