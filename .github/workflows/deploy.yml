@@ -8,12 +8,17 @@ on:
 
 jobs:
   # Build job
-  build:
+  deploy:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
-      - name: Run script file
-        run: |
-          chmod +x ~/fakepng-dev/deploy.sh
-          ~/fakepng-dev/deploy.sh
-        shell: bash
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18.x"
+      - name: Install dependencies
+        run: npm install
+      - name: Install PM2.js
+        run: npm install pm2@latest -g
+      - name: Deploy NEXT.js
+        run: pm2 start npm --name fakepng-dev -- run start -- -p 3000
