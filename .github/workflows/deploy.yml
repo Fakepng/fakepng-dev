@@ -11,4 +11,4 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - run: sh deploy.sh
+      - run: sh ~/fakepng-dev/deploy.sh
