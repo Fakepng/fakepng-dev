@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main className="">
-      \<h1 className="">Hello World</h1>
+      <h1 className="">Hello World</h1>
       fakepng.dev fakepng.com krithub.com
     </main>
   );
