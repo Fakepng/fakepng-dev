@@ -16,4 +16,4 @@ echo "Build your app"
 npm run build
 
 echo "Run new PM2 action"
-sudo pm2 start npm --name fakepng-dev -- run start -- -p 3000
+pm2 start npm --name fakepng-dev -- run start -- -p 3000
