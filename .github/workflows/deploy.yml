@@ -6,6 +6,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  NODE_ENV: production
+
 jobs:
   deploy:
     runs-on: self-hosted
