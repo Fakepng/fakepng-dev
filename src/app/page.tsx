@@ -1,6 +1,9 @@
+import { ModeToggle } from "@/components/mode-toggle";
+
 export default function Home() {
   return (
-    <main className="flex h-screen bg-black w-screen">
+    <main className="flex h-screen w-screen">
+      <ModeToggle />
       <h1 className="text-slate-100 font-extrabold text-6xl m-auto">
         <div className="waviy">
           <span style={{ "--i": 1 } as React.CSSProperties}>c</span>
