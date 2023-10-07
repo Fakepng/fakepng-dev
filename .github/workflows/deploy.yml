@@ -6,26 +6,15 @@ on:
 
   workflow_dispatch:
 
-env:
-  NODE_ENV: production
-
 jobs:
   deploy:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "18.x"
-      - name: Install dependencies
-        run: npm install
-      - name: Install PM2.js
-        run: npm install pm2@latest -g
-      - name: Build NEXT.js
-        run: npm run build
-      - name: Stop and Delete Process
-        continue-on-error: true
-        run: pm2 delete fakepng-dev
-      - name: Deploy NEXT.js
-        run: pm2 start npm --name fakepng-dev -- run start -- -p 3000
+      - uses: actions/checkout@v3
+      - name: Run Container
+        run: docker compose up -d --build
+        env:
+          NODE_ENV: production
+
+      - name: Cleanup Unused Images
+        run: docker image prune -f
